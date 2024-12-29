@@ -5,29 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="admin.css">
-  <script>
-    async function loadFeedbacks() {
-      const response = await fetch('/api/feedbacks');
-      const feedbacks = await response.json();
-      const tableBody = document.getElementById('feedbacks-table-body');
-
-      feedbacks.forEach(feedback => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${feedback.id}</td>
-          <td>${feedback.category}</td>
-          <td>${feedback.message}</td>
-          <td>${feedback.timestamp}</td>
-        `;
-        tableBody.appendChild(row);
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', loadFeedbacks);
-  </script>
+ 
 </head>
 <body>
-  <script src="server.js"></script>
+ 
   <div class="container">
     <h1>Admin Dashboard</h1>
     <div class="table-wrapper">
