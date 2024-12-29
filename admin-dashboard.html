@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+  <script>
+    async function loadFeedbacks() {
+      const response = await fetch('/api/feedbacks');
+      const feedbacks = await response.json();
+      const tableBody = document.getElementById('feedbacks-table-body');
+
+      feedbacks.forEach(feedback => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${feedback.id}</td>
+          <td>${feedback.category}</td>
+          <td>${feedback.message}</td>
+          <td>${feedback.timestamp}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadFeedbacks);
+  </script>
+</head>
+<body>
+  <script src="server.js"></script>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Message</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody id="feedbacks-table-body"></tbody>
+      </table>
+    </div>
+    <p style="color: black;"><a href="index.html">Click here to return to submit a feedback</a> </p>
+  </div>
+</body>
+</html>

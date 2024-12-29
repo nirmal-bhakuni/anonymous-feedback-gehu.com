@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Anonymous Feedback</title>
+</head>
+<body>
+  <script src="server.js"></script>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="/" class="nav-item">Home</a>
+    <a href="https://student.gehu.ac.in/" class="nav-item">Sign In</a>
+    <a href="https://dehradun.gehu.ac.in/about-us/presidents-message/" class="nav-item">About Us</a>
+  </nav>
+
+  <div class="main-container">
+    <div class="welcome">
+      <h1>Welcome to the Feedback Portal</h1>
+      <img src="https://d.gehu.ac.in/uploads/image/gehu-dehradun.png" alt="Graphic Era Hill University Logo" height="200px">
+      <p>
+        Welcome to the anonymous feedback portal for Graphic Era Hill University students! This platform provides a secure and confidential space where students can share their thoughts, suggestions, and concerns about various aspects of university life. Whether it's about academic programs, campus facilities, or student services, your feedback is valuable and helps in shaping the future of the university.
+      </p>
+      <p>
+        The feedback you provide will remain completely anonymous, ensuring that your voice is heard without any fear of identification. Join us in creating a better campus environment by sharing your honest and constructive opinions today!
+      </p>
+    </div>
+    <div class="container">
+      <h1>Submit Your Feedback</h1>
+      <form action="thank-you.html" method="POST">
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="suggestion">Suggestion</option>
+          <option value="complaint">Complaint</option>
+          <option value="praise">Praise</option>
+          <option value="general">General</option>
+        </select>
+
+        <label for="message">Your Feedback:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <p style="color: black;">
+        If you are the admin and want to check the submitted feedbacks <a href="admin-login.html">click_here</a>
+      </p>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Nirmal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
